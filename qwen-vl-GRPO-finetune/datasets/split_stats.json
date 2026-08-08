@@ -1,0 +1,69 @@
+{
+  "train": {
+    "total_samples": 20933,
+    "unique_objects": 885,
+    "quality_ok": 20909,
+    "quality_issue_ratio": 0.0011,
+    "complexity": {
+      "medium": 7348,
+      "hard": 8854,
+      "easy": 4731
+    },
+    "top_categories": {
+      "Furniture": 14074,
+      "Container": 901,
+      "Electronics": 775,
+      "Lighting": 720,
+      "Lighting Fixture": 667,
+      "Lighting Appliance": 384,
+      "Plumbing Fixture": 336,
+      "AudioDevice": 312,
+      "Appliance": 168,
+      "Clock": 168,
+      "OutdoorLighting": 144,
+      "Home Appliance": 134,
+      "Drinkware": 134,
+      "Waste Container": 96,
+      "Bathroom Fixture": 96,
+      "Decorative Object": 96,
+      "Cutlery": 72,
+      "Gardening Container": 72,
+      "Kitchen Appliance": 72,
+      "Bag": 72
+    }
+  },
+  "val": {
+    "total_samples": 2488,
+    "unique_objects": 106,
+    "quality_ok": 2445,
+    "quality_issue_ratio": 0.0173,
+    "complexity": {
+      "medium": 1072,
+      "hard": 975,
+      "easy": 441
+    },
+    "top_categories": {
+      "Furniture": 1551,
+      "Electronics": 93,
+      "Container": 91,
+      "Lighting": 72,
+      "Lighting Fixture": 69,
+      "Lighting Appliance": 48,
+      "Plumbing Fixture": 48,
+      "Appliance": 24,
+      "Cutting Tool": 24,
+      "Household Container": 24,
+      "AudioDevice": 24,
+      "Knife": 24,
+      "Waste Container": 24,
+      "OutdoorLighting": 24,
+      "Bathroom Fixture": 24,
+      "Outdoor Furniture": 24,
+      "GameTable": 24,
+      "Timekeeping Device": 24,
+      "Drinkware": 24,
+      "Gardening Container": 24
+    }
+  },
+  "object_overlap": 0
+}

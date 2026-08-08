@@ -1,0 +1,1 @@
+Based on the `bbox_3d` of `l_{part_id}` from Step 2, generate its local 3D voxel occupancy as a 1D run-length encoded sequence. Encoding: local_id = (x-x_min)*(dy*dz) + (y-y_min)*dz + (z-z_min), where dy=y_max-y_min+1, dz=z_max-z_min+1 (derived from bbox_3d). Merge maximal consecutive runs (e.g. 0 1-5 36-41 ...). Wrap the result in <geometry_l_{part_id}>.</geometry_l_{part_id}>.

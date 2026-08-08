@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.torch_hub_cache/
+outputs/
+cot_results/
+eval_data/
+pretrain/*
+!pretrain/.gitkeep
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+*.jsonl
+*.npz
+*.npy
+*.mp4

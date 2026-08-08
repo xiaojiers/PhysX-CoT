@@ -1,0 +1,14 @@
+-r requirements.txt
+
+accelerate
+datasets
+pandas
+matplotlib
+tiktoken
+tokenizers
+torchvision
+decord
+binpacking
+
+# Flash Attention is optional and must match the installed PyTorch and CUDA
+# versions. Install it separately when using attn_implementation=flash_attention_2.

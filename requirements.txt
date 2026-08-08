@@ -1,0 +1,20 @@
+# Core numerical and geometry utilities used by the checked-in scripts.
+numpy
+scipy
+Pillow
+trimesh
+imageio
+tqdm
+opencv-python
+rembg
+easydict
+
+# Model and vision interfaces used by 1_vlm_cot.py.
+torch==2.5.1
+transformers==4.57.0
+peft==0.15.2
+trl==0.17.0
+qwen-vl-utils
+
+# Install TRELLIS and SAM3 from their upstream repositories before running
+# stages 1-2. Their source trees and checkpoints are intentionally external.

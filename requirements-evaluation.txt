@@ -1,0 +1,10 @@
+-r requirements.txt
+
+openai
+pybullet
+matplotlib
+pandas
+
+# OpenAI CLIP is imported by evaluation_phy.py. Install from the upstream
+# repository when running that evaluator:
+# pip install git+https://github.com/openai/CLIP.git

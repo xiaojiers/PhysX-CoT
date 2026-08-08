@@ -1,0 +1,46 @@
+Analyze the given image of a physical 3D object. Before outputting the structured description, reason step-by-step through its physical and spatial structure inside a <think> block, following exactly the five steps below.
+
+<think>
+Step 1: Global decomposition.
+The object is decomposed into `part_count` core parts: <N>.
+
+Step 2: 2D localization.
+For each part, the visible image position is recorded by `bbox_2d`.
+Part `l_<id>`: `bbox_2d` = [cx, cy, w, h].
+...
+(Normalized to [0.000, 1.000]; origin at top-left; format: center_x, center_y, width, height.)
+
+Step 3: Topology and adjacency.
+For each part, local spatial connectivity is recorded by `spatial_relation`.
+Part `l_<id>`: `adjacent_parts` = [`l_<id>`, ...].
+...
+(List all parts that are physically contacting or directly connected in 3D space.)
+
+Step 4: Primitive abstraction.
+For each part, the coarse 3D primitive abstraction is recorded by `primitive_shape`.
+Part `l_<id>`: `shape_label` = cuboid | cylinder | sphere.
+...
+
+Step 5: Surface perception.
+For each part, the surface perceptual state is recorded by `surface_features`.
+Part `l_<id>`: `hardness` = soft | semi_rigid | rigid, `roughness` = smooth | textured | rough, `reflectivity` = matte | glossy | highly_reflective, `transparency` = opaque | translucent | transparent.
+...
+</think>
+
+Then output the complete structured description in the following format (voxel grid=32):
+Name: <object name>
+Category: <object category>
+Dimension: <physical dimensions in cm like 50*40*30>
+Parts:
+l_<id>: <part name>, <Affordance rank>, <Material Name>, <Density>, <Young's Modulus>, <Poisson's Ratio>, <basic description of the part>
+l_<id>: <part name>, <Affordance rank>, <Material Name>, <Density>, <Young's Modulus>, <Poisson's Ratio>, <basic description of the part>
+...
+Group_info:
+group_<id>: [l_<id>, ...] (child); Type: E; Params: N/A
+group_<id>: [l_<id>, ...] (child); Type: A relative to group_<id> (parent); Params: N/A
+group_<id>: [l_<id>, ...] (child); Type: B relative to group_<id> (parent); Params: direction: [x,y,z], slide range (in voxel grid): [min,max]
+group_<id>: [l_<id>, ...] (child); Type: C relative to group_<id> (parent); Params: direction: [x,y,z], axis position (in voxel grid): [x,y,z], revolute range (degree): [min,max]
+group_<id>: [l_<id>, ...] (child); Type: D relative to group_<id> (parent); Params: hinge position (in voxel grid): [x,y,z]
+group_<id>: [l_<id>, ...] (child); Type: CB relative to group_<id> (parent); Params: axis direction: [x,y,z], axis position (in voxel grid): [x,y,z], revolute range (degree): [min,max], slide direction: [x,y,z], slide range (in voxel grid): [min,max]
+...
+Note: There are Five movement types: A (Move freely), B (Slide), C (Rotate around axis), D (Rotate around point), CB (Rotate and Slide), E (Fixed to the world).

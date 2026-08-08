@@ -1,0 +1,5895 @@
+{
+  "_note": "Sample slice for quick inspection. 3 samples per complexity tier from train and val.",
+  "train": [
+    {
+      "id": "8663_005",
+      "image": "8663_/005.png",
+      "sam_feature": "sam_feature/8663/005.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 1,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 1,
+          "bbox_2d": {
+            "l_0": [
+              0.23,
+              0.77,
+              0.182,
+              0.746
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              0,
+              31,
+              0,
+              31,
+              1,
+              28
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {}
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "complex",
+              "major_axis": "x",
+              "aspect_ratio": "balanced"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Cup",
+          "category": "Container",
+          "dimension": [
+            8.0,
+            8.0,
+            10.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "Body",
+              "material_index": 1,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "This is the main body of a cup, made of plastic. It is cylindrical and hollow to hold liquids."
+            }
+          },
+          "part_ids": [
+            "l_0"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0"
+              ],
+              "type": "E",
+              "param": "N/A"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/8663/32"
+      },
+      "meta": {
+        "split": "train",
+        "category": "Container",
+        "part_count": 1,
+        "complexity": "easy",
+        "quality_ok": true
+      }
+    },
+    {
+      "id": "19765_021",
+      "image": "19765_/021.png",
+      "sam_feature": "sam_feature/19765/021.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 2,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 2,
+          "bbox_2d": {
+            "l_0": [
+              0.221,
+              0.783,
+              0.388,
+              0.56
+            ],
+            "l_1": [
+              0.362,
+              0.638,
+              0.419,
+              0.607
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              0,
+              31,
+              10,
+              21,
+              21,
+              22
+            ],
+            "l_1": [
+              7,
+              24,
+              10,
+              21,
+              14,
+              22
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {
+              "l_1": [
+                "bottom"
+              ]
+            },
+            "l_1": {
+              "l_0": [
+                "top"
+              ]
+            }
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_1": {
+              "shape_label": "complex",
+              "major_axis": "x",
+              "aspect_ratio": "elongated"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_1": {
+              "hardness": "rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Folding Table",
+          "category": "Furniture",
+          "dimension": [
+            180.0,
+            60.0,
+            75.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "Board",
+              "material_index": 1,
+              "material": "Wood",
+              "density": 0.7,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the tabletop board of a folding table, made of wood."
+            },
+            "l_1": {
+              "part_name": "Table Base",
+              "material_index": 4,
+              "material": "Metal",
+              "density": 7.8,
+              "young_modulus": 200.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the supporting base of the folding table, made of metal."
+            }
+          },
+          "part_ids": [
+            "l_0",
+            "l_1"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0",
+                "l_1"
+              ],
+              "type": "E",
+              "param": "N/A"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/19765/32"
+      },
+      "meta": {
+        "split": "train",
+        "category": "Furniture",
+        "part_count": 2,
+        "complexity": "easy",
+        "quality_ok": true
+      }
+    },
+    {
+      "id": "15554_009",
+      "image": "15554_/009.png",
+      "sam_feature": "sam_feature/15554/009.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 2,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 2,
+          "bbox_2d": {
+            "l_0": [
+              0.463,
+              0.537,
+              0.212,
+              0.246
+            ],
+            "l_1": [
+              0.419,
+              0.581,
+              0.244,
+              0.798
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              13,
+              18,
+              13,
+              18,
+              27,
+              29
+            ],
+            "l_1": [
+              11,
+              20,
+              11,
+              20,
+              0,
+              27
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {
+              "l_1": [
+                "bottom"
+              ]
+            },
+            "l_1": {
+              "l_0": [
+                "top"
+              ]
+            }
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "elongated"
+            },
+            "l_1": {
+              "shape_label": "complex",
+              "major_axis": "z",
+              "aspect_ratio": "flat"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_1": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Pendant Lamp",
+          "category": "Lighting Fixture",
+          "dimension": [
+            15.0,
+            15.0,
+            60.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "Lamp Base",
+              "material_index": 10,
+              "material": "Metal",
+              "density": 7.8,
+              "young_modulus": 200.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the ceiling-mounted base of a pendant lamp, made of metal."
+            },
+            "l_1": {
+              "part_name": "Pendant Lamp Unit",
+              "material_index": 1,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "This is the main lighting unit of the pendant lamp, made of plastic."
+            }
+          },
+          "part_ids": [
+            "l_0",
+            "l_1"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0",
+                "l_1"
+              ],
+              "type": "E",
+              "param": "N/A"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/15554/32"
+      },
+      "meta": {
+        "split": "train",
+        "category": "Lighting Fixture",
+        "part_count": 2,
+        "complexity": "easy",
+        "quality_ok": true
+      }
+    },
+    {
+      "id": "23042_002",
+      "image": "23042_/002.png",
+      "sam_feature": "sam_feature/23042/002.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 5,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 5,
+          "bbox_2d": {
+            "l_0": [
+              0.183,
+              0.817,
+              0.26,
+              0.582
+            ],
+            "l_1": [
+              0.324,
+              0.388,
+              0.347,
+              0.57
+            ],
+            "l_2": [
+              0.377,
+              0.529,
+              0.404,
+              0.572
+            ],
+            "l_3": [
+              0.521,
+              0.578,
+              0.404,
+              0.62
+            ],
+            "l_4": [
+              0.564,
+              0.714,
+              0.462,
+              0.627
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              0,
+              31,
+              7,
+              24,
+              22,
+              23
+            ],
+            "l_1": [
+              21,
+              27,
+              13,
+              19,
+              13,
+              22
+            ],
+            "l_2": [
+              15,
+              21,
+              13,
+              19,
+              13,
+              22
+            ],
+            "l_3": [
+              9,
+              15,
+              13,
+              19,
+              13,
+              22
+            ],
+            "l_4": [
+              3,
+              10,
+              13,
+              19,
+              13,
+              22
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {
+              "l_1": [
+                "right",
+                "bottom"
+              ],
+              "l_2": [
+                "bottom"
+              ],
+              "l_3": [
+                "bottom"
+              ],
+              "l_4": [
+                "left",
+                "bottom"
+              ]
+            },
+            "l_1": {
+              "l_0": [
+                "left",
+                "top"
+              ],
+              "l_2": [
+                "left"
+              ]
+            },
+            "l_2": {
+              "l_0": [
+                "top"
+              ],
+              "l_1": [
+                "right"
+              ],
+              "l_3": [
+                "left"
+              ]
+            },
+            "l_3": {
+              "l_0": [
+                "top"
+              ],
+              "l_2": [
+                "right"
+              ],
+              "l_4": [
+                "left"
+              ]
+            },
+            "l_4": {
+              "l_0": [
+                "right",
+                "top"
+              ],
+              "l_3": [
+                "right"
+              ]
+            }
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_1": {
+              "shape_label": "complex",
+              "major_axis": "z",
+              "aspect_ratio": "balanced"
+            },
+            "l_2": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "balanced"
+            },
+            "l_3": {
+              "shape_label": "complex",
+              "major_axis": "z",
+              "aspect_ratio": "balanced"
+            },
+            "l_4": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "balanced"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_1": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_2": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_3": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_4": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Rectangular Table",
+          "category": "Furniture",
+          "dimension": [
+            180.0,
+            80.0,
+            75.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "board",
+              "material_index": 1,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "It's the top board of a rectangular table made of wood."
+            },
+            "l_1": {
+              "part_name": "vertical_side_panel",
+              "material_index": 5,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A vertical side panel of the table made of wood."
+            },
+            "l_2": {
+              "part_name": "vertical_side_panel",
+              "material_index": 6,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A vertical side panel of the table made of wood."
+            },
+            "l_3": {
+              "part_name": "vertical_side_panel",
+              "material_index": 4,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A vertical side panel of the table made of wood."
+            },
+            "l_4": {
+              "part_name": "vertical_side_panel",
+              "material_index": 3,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A vertical side panel of the table made of wood."
+            }
+          },
+          "part_ids": [
+            "l_0",
+            "l_1",
+            "l_2",
+            "l_3",
+            "l_4"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0",
+                "l_1",
+                "l_2",
+                "l_3",
+                "l_4"
+              ],
+              "type": "E",
+              "param": "N/A"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/23042/32"
+      },
+      "meta": {
+        "split": "train",
+        "category": "Furniture",
+        "part_count": 5,
+        "complexity": "medium",
+        "quality_ok": true
+      }
+    },
+    {
+      "id": "33039_014",
+      "image": "33039_/014.png",
+      "sam_feature": "sam_feature/33039/014.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 3,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 3,
+          "bbox_2d": {
+            "l_0": [
+              0.256,
+              0.75,
+              0.286,
+              0.448
+            ],
+            "l_1": [
+              0.2,
+              0.808,
+              0.277,
+              0.487
+            ],
+            "l_2": [
+              0.231,
+              0.75,
+              0.293,
+              0.802
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              2,
+              29,
+              2,
+              29,
+              28,
+              29
+            ],
+            "l_1": [
+              0,
+              31,
+              0,
+              31,
+              28,
+              29
+            ],
+            "l_2": [
+              4,
+              27,
+              4,
+              27,
+              8,
+              28
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {
+              "l_1": [
+                "center"
+              ],
+              "l_2": [
+                "bottom"
+              ]
+            },
+            "l_1": {
+              "l_0": [
+                "center"
+              ],
+              "l_2": [
+                "bottom"
+              ]
+            },
+            "l_2": {
+              "l_0": [
+                "top"
+              ],
+              "l_1": [
+                "top"
+              ]
+            }
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "very_flat"
+            },
+            "l_1": {
+              "shape_label": "cylinder",
+              "major_axis": "y",
+              "aspect_ratio": "very_flat"
+            },
+            "l_2": {
+              "shape_label": "complex",
+              "major_axis": "z",
+              "aspect_ratio": "balanced"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_1": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_2": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Patio Table",
+          "category": "Furniture",
+          "dimension": [
+            100.0,
+            100.0,
+            75.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "tabletop_surface",
+              "material_index": 1,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the tabletop surface of a patio table, made of wood."
+            },
+            "l_1": {
+              "part_name": "tabletop_frame",
+              "material_index": 3,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "This is the frame surrounding the tabletop surface, made of plastic."
+            },
+            "l_2": {
+              "part_name": "table_base",
+              "material_index": 2,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "This is the base of the patio table, made of plastic."
+            }
+          },
+          "part_ids": [
+            "l_0",
+            "l_1",
+            "l_2"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0",
+                "l_1",
+                "l_2"
+              ],
+              "type": "E",
+              "param": "N/A"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/33039/32"
+      },
+      "meta": {
+        "split": "train",
+        "category": "Furniture",
+        "part_count": 3,
+        "complexity": "medium",
+        "quality_ok": true
+      }
+    },
+    {
+      "id": "2422_013",
+      "image": "2422_/013.png",
+      "sam_feature": "sam_feature/2422/013.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 5,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 5,
+          "bbox_2d": {
+            "l_0": [
+              0.35,
+              0.404,
+              0.297,
+              0.549
+            ],
+            "l_1": [
+              0.332,
+              0.416,
+              0.236,
+              0.536
+            ],
+            "l_2": [
+              0.394,
+              0.644,
+              0.456,
+              0.57
+            ],
+            "l_3": [
+              0.39,
+              0.649,
+              0.463,
+              0.586
+            ],
+            "l_4": [
+              0.387,
+              0.643,
+              0.462,
+              0.762
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              10,
+              21,
+              22,
+              25,
+              14,
+              27
+            ],
+            "l_1": [
+              7,
+              24,
+              21,
+              26,
+              14,
+              31
+            ],
+            "l_2": [
+              8,
+              24,
+              7,
+              23,
+              14,
+              15
+            ],
+            "l_3": [
+              8,
+              24,
+              6,
+              23,
+              13,
+              14
+            ],
+            "l_4": [
+              8,
+              24,
+              6,
+              24,
+              0,
+              16
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {
+              "l_1": [
+                "top"
+              ],
+              "l_2": [
+                "front",
+                "bottom"
+              ],
+              "l_3": [
+                "front",
+                "bottom"
+              ],
+              "l_4": [
+                "front",
+                "bottom"
+              ]
+            },
+            "l_1": {
+              "l_0": [
+                "bottom"
+              ],
+              "l_2": [
+                "front",
+                "bottom"
+              ],
+              "l_3": [
+                "front",
+                "bottom"
+              ],
+              "l_4": [
+                "front",
+                "bottom"
+              ]
+            },
+            "l_2": {
+              "l_0": [
+                "back",
+                "top"
+              ],
+              "l_1": [
+                "back",
+                "top"
+              ],
+              "l_3": [
+                "center"
+              ],
+              "l_4": [
+                "bottom"
+              ]
+            },
+            "l_3": {
+              "l_0": [
+                "back",
+                "top"
+              ],
+              "l_1": [
+                "back",
+                "top"
+              ],
+              "l_2": [
+                "center"
+              ],
+              "l_4": [
+                "center"
+              ]
+            },
+            "l_4": {
+              "l_0": [
+                "back",
+                "top"
+              ],
+              "l_1": [
+                "back",
+                "top"
+              ],
+              "l_2": [
+                "top"
+              ],
+              "l_3": [
+                "center"
+              ]
+            }
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "complex",
+              "major_axis": "z",
+              "aspect_ratio": "flat"
+            },
+            "l_1": {
+              "shape_label": "complex",
+              "major_axis": "x",
+              "aspect_ratio": "flat"
+            },
+            "l_2": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_3": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "very_flat"
+            },
+            "l_4": {
+              "shape_label": "complex",
+              "major_axis": "y",
+              "aspect_ratio": "balanced"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_1": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_2": {
+              "hardness": "soft",
+              "roughness": "rough",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_3": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_4": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Chair",
+          "category": "Furniture",
+          "dimension": [
+            45.0,
+            45.0,
+            90.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "Back Surface",
+              "material_index": 3,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the back surface of a chair, made of wood."
+            },
+            "l_1": {
+              "part_name": "Back Frame",
+              "material_index": 4,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the back frame of the chair, made of wood."
+            },
+            "l_2": {
+              "part_name": "Seat Surface",
+              "material_index": 1,
+              "material": "Cushioned Fabric",
+              "density": 0.2,
+              "young_modulus": 0.07,
+              "poisson_ratio": 0.38,
+              "description": "This is the seat surface of the chair, made of cushioned fabric."
+            },
+            "l_3": {
+              "part_name": "Seat Support",
+              "material_index": 6,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the seat support of the chair, made of wood."
+            },
+            "l_4": {
+              "part_name": "Chair Base",
+              "material_index": 7,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the base of the chair, made of wood."
+            }
+          },
+          "part_ids": [
+            "l_0",
+            "l_1",
+            "l_2",
+            "l_3",
+            "l_4"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0",
+                "l_1",
+                "l_2",
+                "l_3",
+                "l_4"
+              ],
+              "type": "E",
+              "param": "N/A"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/2422/32"
+      },
+      "meta": {
+        "split": "train",
+        "category": "Furniture",
+        "part_count": 5,
+        "complexity": "medium",
+        "quality_ok": true
+      }
+    },
+    {
+      "id": "46486_023",
+      "image": "46486_/023.png",
+      "sam_feature": "sam_feature/46486/023.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 19,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 19,
+          "bbox_2d": {
+            "l_0": [
+              0.467,
+              0.609,
+              0.383,
+              0.447
+            ],
+            "l_1": [
+              0.386,
+              0.526,
+              0.594,
+              0.66
+            ],
+            "l_2": [
+              0.517,
+              0.609,
+              0.435,
+              0.66
+            ],
+            "l_3": [
+              0.52,
+              0.605,
+              0.437,
+              0.641
+            ],
+            "l_4": [
+              0.521,
+              0.611,
+              0.427,
+              0.644
+            ],
+            "l_5": [
+              0.523,
+              0.62,
+              0.414,
+              0.647
+            ],
+            "l_6": [
+              0.363,
+              0.609,
+              0.348,
+              0.632
+            ],
+            "l_7": [
+              0.356,
+              0.616,
+              0.332,
+              0.632
+            ],
+            "l_8": [
+              0.345,
+              0.623,
+              0.313,
+              0.635
+            ],
+            "l_9": [
+              0.391,
+              0.633,
+              0.293,
+              0.497
+            ],
+            "l_10": [
+              0.335,
+              0.581,
+              0.433,
+              0.638
+            ],
+            "l_11": [
+              0.387,
+              0.603,
+              0.381,
+              0.645
+            ],
+            "l_12": [
+              0.379,
+              0.609,
+              0.366,
+              0.648
+            ],
+            "l_13": [
+              0.371,
+              0.605,
+              0.354,
+              0.636
+            ],
+            "l_14": [
+              0.363,
+              0.611,
+              0.34,
+              0.638
+            ],
+            "l_15": [
+              0.354,
+              0.617,
+              0.323,
+              0.641
+            ],
+            "l_16": [
+              0.344,
+              0.625,
+              0.303,
+              0.643
+            ],
+            "l_17": [
+              0.308,
+              0.667,
+              0.246,
+              0.684
+            ],
+            "l_18": [
+              0.393,
+              0.597,
+              0.394,
+              0.643
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              23,
+              25,
+              10,
+              22,
+              0,
+              1
+            ],
+            "l_1": [
+              6,
+              7,
+              10,
+              22,
+              0,
+              1
+            ],
+            "l_2": [
+              6,
+              25,
+              10,
+              12,
+              0,
+              1
+            ],
+            "l_3": [
+              8,
+              23,
+              10,
+              12,
+              3,
+              6
+            ],
+            "l_4": [
+              8,
+              23,
+              10,
+              12,
+              7,
+              11
+            ],
+            "l_5": [
+              8,
+              23,
+              10,
+              12,
+              11,
+              15
+            ],
+            "l_6": [
+              8,
+              22,
+              11,
+              22,
+              17,
+              20
+            ],
+            "l_7": [
+              8,
+              22,
+              11,
+              22,
+              21,
+              23
+            ],
+            "l_8": [
+              8,
+              22,
+              11,
+              22,
+              24,
+              27
+            ],
+            "l_9": [
+              16,
+              22,
+              11,
+              22,
+              27,
+              30
+            ],
+            "l_10": [
+              8,
+              15,
+              11,
+              22,
+              27,
+              30
+            ],
+            "l_11": [
+              7,
+              24,
+              11,
+              22,
+              6,
+              7
+            ],
+            "l_12": [
+              7,
+              24,
+              11,
+              22,
+              11,
+              11
+            ],
+            "l_13": [
+              8,
+              23,
+              12,
+              22,
+              17,
+              17
+            ],
+            "l_14": [
+              8,
+              23,
+              12,
+              22,
+              20,
+              21
+            ],
+            "l_15": [
+              8,
+              23,
+              12,
+              22,
+              24,
+              24
+            ],
+            "l_16": [
+              8,
+              23,
+              12,
+              22,
+              27,
+              27
+            ],
+            "l_17": [
+              6,
+              25,
+              10,
+              22,
+              1,
+              31
+            ],
+            "l_18": [
+              7,
+              24,
+              11,
+              22,
+              2,
+              3
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {
+              "l_2": [
+                "left",
+                "front"
+              ],
+              "l_17": [
+                "left",
+                "top"
+              ],
+              "l_18": [
+                "left"
+              ]
+            },
+            "l_1": {
+              "l_2": [
+                "right",
+                "front"
+              ],
+              "l_17": [
+                "right",
+                "top"
+              ],
+              "l_18": [
+                "right"
+              ]
+            },
+            "l_2": {
+              "l_0": [
+                "right",
+                "back"
+              ],
+              "l_1": [
+                "left",
+                "back"
+              ],
+              "l_17": [
+                "back",
+                "top"
+              ],
+              "l_18": [
+                "back"
+              ]
+            },
+            "l_3": {
+              "l_4": [
+                "center"
+              ],
+              "l_11": [
+                "back"
+              ],
+              "l_17": [
+                "back",
+                "top"
+              ],
+              "l_18": [
+                "back"
+              ]
+            },
+            "l_4": {
+              "l_3": [
+                "center"
+              ],
+              "l_5": [
+                "center"
+              ],
+              "l_11": [
+                "back"
+              ],
+              "l_12": [
+                "back"
+              ],
+              "l_17": [
+                "back",
+                "top"
+              ]
+            },
+            "l_5": {
+              "l_4": [
+                "center"
+              ],
+              "l_12": [
+                "back"
+              ],
+              "l_17": [
+                "back"
+              ]
+            },
+            "l_6": {
+              "l_7": [
+                "center"
+              ],
+              "l_13": [
+                "center"
+              ],
+              "l_14": [
+                "center"
+              ],
+              "l_17": [
+                "center"
+              ]
+            },
+            "l_7": {
+              "l_6": [
+                "center"
+              ],
+              "l_8": [
+                "center"
+              ],
+              "l_14": [
+                "center"
+              ],
+              "l_15": [
+                "center"
+              ],
+              "l_17": [
+                "bottom"
+              ]
+            },
+            "l_8": {
+              "l_7": [
+                "center"
+              ],
+              "l_9": [
+                "center"
+              ],
+              "l_10": [
+                "center"
+              ],
+              "l_15": [
+                "center"
+              ],
+              "l_16": [
+                "center"
+              ],
+              "l_17": [
+                "bottom"
+              ]
+            },
+            "l_9": {
+              "l_8": [
+                "center"
+              ],
+              "l_10": [
+                "left"
+              ],
+              "l_16": [
+                "center"
+              ],
+              "l_17": [
+                "bottom"
+              ]
+            },
+            "l_10": {
+              "l_8": [
+                "center"
+              ],
+              "l_9": [
+                "right"
+              ],
+              "l_16": [
+                "center"
+              ],
+              "l_17": [
+                "bottom"
+              ]
+            },
+            "l_11": {
+              "l_3": [
+                "front"
+              ],
+              "l_4": [
+                "front"
+              ],
+              "l_17": [
+                "top"
+              ]
+            },
+            "l_12": {
+              "l_4": [
+                "front"
+              ],
+              "l_5": [
+                "front"
+              ],
+              "l_17": [
+                "center"
+              ]
+            },
+            "l_13": {
+              "l_6": [
+                "center"
+              ],
+              "l_17": [
+                "center"
+              ]
+            },
+            "l_14": {
+              "l_6": [
+                "center"
+              ],
+              "l_7": [
+                "center"
+              ],
+              "l_17": [
+                "bottom"
+              ]
+            },
+            "l_15": {
+              "l_7": [
+                "center"
+              ],
+              "l_8": [
+                "center"
+              ],
+              "l_17": [
+                "bottom"
+              ]
+            },
+            "l_16": {
+              "l_8": [
+                "center"
+              ],
+              "l_9": [
+                "center"
+              ],
+              "l_10": [
+                "center"
+              ],
+              "l_17": [
+                "bottom"
+              ]
+            },
+            "l_17": {
+              "l_0": [
+                "right",
+                "bottom"
+              ],
+              "l_1": [
+                "left",
+                "bottom"
+              ],
+              "l_2": [
+                "front",
+                "bottom"
+              ],
+              "l_3": [
+                "front",
+                "bottom"
+              ],
+              "l_4": [
+                "front",
+                "bottom"
+              ],
+              "l_5": [
+                "front"
+              ],
+              "l_6": [
+                "center"
+              ],
+              "l_7": [
+                "top"
+              ],
+              "l_8": [
+                "top"
+              ],
+              "l_9": [
+                "top"
+              ],
+              "l_10": [
+                "top"
+              ],
+              "l_11": [
+                "bottom"
+              ],
+              "l_12": [
+                "center"
+              ],
+              "l_13": [
+                "center"
+              ],
+              "l_14": [
+                "top"
+              ],
+              "l_15": [
+                "top"
+              ],
+              "l_16": [
+                "top"
+              ],
+              "l_18": [
+                "bottom"
+              ]
+            },
+            "l_18": {
+              "l_0": [
+                "right"
+              ],
+              "l_1": [
+                "left"
+              ],
+              "l_2": [
+                "front"
+              ],
+              "l_3": [
+                "front"
+              ],
+              "l_17": [
+                "top"
+              ]
+            }
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "very_flat"
+            },
+            "l_1": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "very_flat"
+            },
+            "l_2": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_3": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_4": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_5": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_6": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "flat"
+            },
+            "l_7": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_8": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "flat"
+            },
+            "l_9": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "flat"
+            },
+            "l_10": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "flat"
+            },
+            "l_11": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_12": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_13": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_14": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_15": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_16": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_17": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "elongated"
+            },
+            "l_18": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_1": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_2": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_3": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_4": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_5": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_6": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_7": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_8": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_9": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_10": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_11": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_12": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_13": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_14": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_15": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_16": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_17": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_18": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Chest of Drawers",
+          "category": "Furniture",
+          "dimension": [
+            90.0,
+            45.0,
+            180.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "base_side_panel",
+              "material_index": 10,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A wooden base side panel of the chest."
+            },
+            "l_1": {
+              "part_name": "base_side_panel",
+              "material_index": 10,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A wooden base side panel of the chest."
+            },
+            "l_2": {
+              "part_name": "base_side_panel",
+              "material_index": 10,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A wooden base front panel of the chest."
+            },
+            "l_3": {
+              "part_name": "drawer",
+              "material_index": 1,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A wooden drawer at the bottom of the chest."
+            },
+            "l_4": {
+              "part_name": "drawer",
+              "material_index": 2,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A wooden drawer in the lower section."
+            },
+            "l_5": {
+              "part_name": "drawer",
+              "material_index": 3,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A wooden drawer in the middle section."
+            },
+            "l_6": {
+              "part_name": "drawer",
+              "material_index": 4,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A wooden drawer in the middle-upper section."
+            },
+            "l_7": {
+              "part_name": "drawer",
+              "material_index": 5,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A wooden drawer in the upper section."
+            },
+            "l_8": {
+              "part_name": "drawer",
+              "material_index": 6,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A wooden drawer in the upper section."
+            },
+            "l_9": {
+              "part_name": "drawer",
+              "material_index": 7,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A wooden drawer in the top section."
+            },
+            "l_10": {
+              "part_name": "drawer",
+              "material_index": 8,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A small drawer at the top of the chest."
+            },
+            "l_11": {
+              "part_name": "shelf",
+              "material_index": 9,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A fixed wooden shelf inside the cabinet."
+            },
+            "l_12": {
+              "part_name": "shelf",
+              "material_index": 9,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A fixed wooden shelf inside the cabinet."
+            },
+            "l_13": {
+              "part_name": "shelf",
+              "material_index": 9,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A fixed wooden shelf inside the cabinet."
+            },
+            "l_14": {
+              "part_name": "shelf",
+              "material_index": 9,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A fixed wooden shelf inside the cabinet."
+            },
+            "l_15": {
+              "part_name": "shelf",
+              "material_index": 9,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A fixed wooden shelf inside the cabinet."
+            },
+            "l_16": {
+              "part_name": "shelf",
+              "material_index": 9,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A fixed wooden shelf inside the cabinet."
+            },
+            "l_17": {
+              "part_name": "cabinet_frame",
+              "material_index": 10,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "The main wooden frame of the chest."
+            },
+            "l_18": {
+              "part_name": "shelf",
+              "material_index": 9,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A fixed wooden shelf inside the cabinet."
+            }
+          },
+          "part_ids": [
+            "l_0",
+            "l_1",
+            "l_2",
+            "l_3",
+            "l_4",
+            "l_5",
+            "l_6",
+            "l_7",
+            "l_8",
+            "l_9",
+            "l_10",
+            "l_11",
+            "l_12",
+            "l_13",
+            "l_14",
+            "l_15",
+            "l_16",
+            "l_17",
+            "l_18"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_1",
+                "l_11",
+                "l_13",
+                "l_15",
+                "l_18",
+                "l_17",
+                "l_0",
+                "l_2",
+                "l_12",
+                "l_14",
+                "l_16"
+              ],
+              "type": "E",
+              "param": "N/A"
+            },
+            {
+              "id": "group_1",
+              "parts": [
+                "l_3"
+              ],
+              "type": "B relative to group_0",
+              "param": "direction: [0, 1, 0], slide range (in voxel grid): [-20.04, -0.0]"
+            },
+            {
+              "id": "group_2",
+              "parts": [
+                "l_4"
+              ],
+              "type": "B relative to group_0",
+              "param": "direction: [0, 1, 0], slide range (in voxel grid): [-20.04, -0.0]"
+            },
+            {
+              "id": "group_3",
+              "parts": [
+                "l_5"
+              ],
+              "type": "B relative to group_0",
+              "param": "direction: [0, 1, 0], slide range (in voxel grid): [-20.04, -0.0]"
+            },
+            {
+              "id": "group_4",
+              "parts": [
+                "l_6"
+              ],
+              "type": "B relative to group_0",
+              "param": "direction: [0, 1, 0], slide range (in voxel grid): [-20.04, -0.0]"
+            },
+            {
+              "id": "group_5",
+              "parts": [
+                "l_7"
+              ],
+              "type": "B relative to group_0",
+              "param": "direction: [0, 1, 0], slide range (in voxel grid): [-20.04, -0.0]"
+            },
+            {
+              "id": "group_6",
+              "parts": [
+                "l_8"
+              ],
+              "type": "B relative to group_0",
+              "param": "direction: [0, 1, 0], slide range (in voxel grid): [-20.04, -0.0]"
+            },
+            {
+              "id": "group_7",
+              "parts": [
+                "l_9"
+              ],
+              "type": "B relative to group_0",
+              "param": "direction: [0, 1, 0], slide range (in voxel grid): [-20.04, -0.0]"
+            },
+            {
+              "id": "group_8",
+              "parts": [
+                "l_10"
+              ],
+              "type": "B relative to group_0",
+              "param": "direction: [0, 1, 0], slide range (in voxel grid): [-20.04, -0.0]"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/46486/32"
+      },
+      "meta": {
+        "split": "train",
+        "category": "Furniture",
+        "part_count": 19,
+        "complexity": "hard",
+        "quality_ok": true
+      }
+    },
+    {
+      "id": "42796_004",
+      "image": "42796_/004.png",
+      "sam_feature": "sam_feature/42796/004.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 9,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 9,
+          "bbox_2d": {
+            "l_0": [
+              0.474,
+              0.632,
+              0.337,
+              0.517
+            ],
+            "l_1": [
+              0.451,
+              0.664,
+              0.27,
+              0.526
+            ],
+            "l_2": [
+              0.381,
+              0.609,
+              0.48,
+              0.538
+            ],
+            "l_3": [
+              0.314,
+              0.642,
+              0.465,
+              0.557
+            ],
+            "l_4": [
+              0.377,
+              0.611,
+              0.499,
+              0.689
+            ],
+            "l_5": [
+              0.449,
+              0.489,
+              0.541,
+              0.753
+            ],
+            "l_6": [
+              0.305,
+              0.363,
+              0.524,
+              0.768
+            ],
+            "l_7": [
+              0.468,
+              0.522,
+              0.491,
+              0.787
+            ],
+            "l_8": [
+              0.599,
+              0.647,
+              0.534,
+              0.766
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              10,
+              21,
+              19,
+              23,
+              15,
+              26
+            ],
+            "l_1": [
+              8,
+              23,
+              19,
+              25,
+              15,
+              31
+            ],
+            "l_2": [
+              10,
+              21,
+              11,
+              21,
+              13,
+              15
+            ],
+            "l_3": [
+              8,
+              23,
+              7,
+              21,
+              12,
+              15
+            ],
+            "l_4": [
+              10,
+              21,
+              11,
+              21,
+              4,
+              15
+            ],
+            "l_5": [
+              8,
+              10,
+              19,
+              21,
+              0,
+              13
+            ],
+            "l_6": [
+              8,
+              11,
+              7,
+              9,
+              0,
+              13
+            ],
+            "l_7": [
+              21,
+              23,
+              7,
+              9,
+              0,
+              13
+            ],
+            "l_8": [
+              21,
+              23,
+              19,
+              21,
+              0,
+              13
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {
+              "l_1": [
+                "center"
+              ],
+              "l_2": [
+                "front",
+                "bottom"
+              ],
+              "l_3": [
+                "front",
+                "bottom"
+              ],
+              "l_4": [
+                "bottom"
+              ]
+            },
+            "l_1": {
+              "l_0": [
+                "center"
+              ],
+              "l_2": [
+                "front",
+                "bottom"
+              ],
+              "l_3": [
+                "front",
+                "bottom"
+              ],
+              "l_4": [
+                "front",
+                "bottom"
+              ]
+            },
+            "l_2": {
+              "l_0": [
+                "back",
+                "top"
+              ],
+              "l_1": [
+                "back",
+                "top"
+              ],
+              "l_3": [
+                "center"
+              ],
+              "l_4": [
+                "center"
+              ],
+              "l_5": [
+                "left",
+                "bottom"
+              ],
+              "l_8": [
+                "right",
+                "bottom"
+              ]
+            },
+            "l_3": {
+              "l_0": [
+                "back",
+                "top"
+              ],
+              "l_1": [
+                "back",
+                "top"
+              ],
+              "l_2": [
+                "center"
+              ],
+              "l_4": [
+                "center"
+              ],
+              "l_5": [
+                "left",
+                "back",
+                "bottom"
+              ],
+              "l_6": [
+                "left",
+                "bottom"
+              ],
+              "l_7": [
+                "right",
+                "bottom"
+              ],
+              "l_8": [
+                "right",
+                "back",
+                "bottom"
+              ]
+            },
+            "l_4": {
+              "l_0": [
+                "top"
+              ],
+              "l_1": [
+                "back",
+                "top"
+              ],
+              "l_2": [
+                "center"
+              ],
+              "l_3": [
+                "center"
+              ],
+              "l_5": [
+                "left"
+              ],
+              "l_8": [
+                "right"
+              ]
+            },
+            "l_5": {
+              "l_2": [
+                "right",
+                "top"
+              ],
+              "l_3": [
+                "right",
+                "front",
+                "top"
+              ],
+              "l_4": [
+                "right"
+              ]
+            },
+            "l_6": {
+              "l_3": [
+                "right",
+                "top"
+              ]
+            },
+            "l_7": {
+              "l_3": [
+                "left",
+                "top"
+              ]
+            },
+            "l_8": {
+              "l_2": [
+                "left",
+                "top"
+              ],
+              "l_3": [
+                "left",
+                "front",
+                "top"
+              ],
+              "l_4": [
+                "left"
+              ]
+            }
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "elongated"
+            },
+            "l_1": {
+              "shape_label": "complex",
+              "major_axis": "x",
+              "aspect_ratio": "elongated"
+            },
+            "l_2": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "flat"
+            },
+            "l_3": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "flat"
+            },
+            "l_4": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "balanced"
+            },
+            "l_5": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "flat"
+            },
+            "l_6": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "flat"
+            },
+            "l_7": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "flat"
+            },
+            "l_8": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "flat"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_1": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_2": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_3": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_4": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_5": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_6": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_7": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_8": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Chair",
+          "category": "Furniture",
+          "dimension": [
+            45.0,
+            45.0,
+            90.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "Back Surface",
+              "material_index": 2,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "It's the backrest surface of a chair made of plastic."
+            },
+            "l_1": {
+              "part_name": "Back Frame",
+              "material_index": 5,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "The structural frame supporting the back surface."
+            },
+            "l_2": {
+              "part_name": "Seat Surface",
+              "material_index": 1,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "The flat surface where the user sits."
+            },
+            "l_3": {
+              "part_name": "Seat Frame",
+              "material_index": 5,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "The structural frame supporting the seat surface and connecting to the legs."
+            },
+            "l_4": {
+              "part_name": "Other",
+              "material_index": 9,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "An additional structural or aesthetic component under the seat."
+            },
+            "l_5": {
+              "part_name": "Leg",
+              "material_index": 8,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "One of the four legs of the chair."
+            },
+            "l_6": {
+              "part_name": "Leg",
+              "material_index": 8,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "One of the four legs of the chair."
+            },
+            "l_7": {
+              "part_name": "Leg",
+              "material_index": 8,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "One of the four legs of the chair."
+            },
+            "l_8": {
+              "part_name": "Leg",
+              "material_index": 8,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "One of the four legs of the chair."
+            }
+          },
+          "part_ids": [
+            "l_0",
+            "l_1",
+            "l_2",
+            "l_3",
+            "l_4",
+            "l_5",
+            "l_6",
+            "l_7",
+            "l_8"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0",
+                "l_1",
+                "l_2",
+                "l_3",
+                "l_4",
+                "l_5",
+                "l_6",
+                "l_7",
+                "l_8"
+              ],
+              "type": "E",
+              "param": "N/A"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/42796/32"
+      },
+      "meta": {
+        "split": "train",
+        "category": "Furniture",
+        "part_count": 9,
+        "complexity": "hard",
+        "quality_ok": true
+      }
+    },
+    {
+      "id": "46660_005",
+      "image": "46660_/005.png",
+      "sam_feature": "sam_feature/46660/005.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 7,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 7,
+          "bbox_2d": {
+            "l_0": [
+              0.311,
+              0.686,
+              0.167,
+              0.713
+            ],
+            "l_1": [
+              0.549,
+              0.697,
+              0.223,
+              0.704
+            ],
+            "l_2": [
+              0.396,
+              0.644,
+              0.709,
+              0.789
+            ],
+            "l_3": [
+              0.309,
+              0.514,
+              0.703,
+              0.765
+            ],
+            "l_4": [
+              0.309,
+              0.643,
+              0.703,
+              0.789
+            ],
+            "l_5": [
+              0.31,
+              0.396,
+              0.705,
+              0.787
+            ],
+            "l_6": [
+              0.31,
+              0.643,
+              0.757,
+              0.789
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              7,
+              24,
+              8,
+              25,
+              2,
+              31
+            ],
+            "l_1": [
+              8,
+              24,
+              7,
+              8,
+              3,
+              31
+            ],
+            "l_2": [
+              7,
+              7,
+              11,
+              25,
+              0,
+              3
+            ],
+            "l_3": [
+              24,
+              24,
+              11,
+              25,
+              0,
+              3
+            ],
+            "l_4": [
+              7,
+              24,
+              11,
+              25,
+              0,
+              3
+            ],
+            "l_5": [
+              8,
+              24,
+              25,
+              25,
+              0,
+              3
+            ],
+            "l_6": [
+              7,
+              24,
+              11,
+              25,
+              0,
+              0
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {
+              "l_1": [
+                "front"
+              ],
+              "l_2": [
+                "left",
+                "bottom"
+              ],
+              "l_3": [
+                "right",
+                "bottom"
+              ],
+              "l_4": [
+                "bottom"
+              ],
+              "l_5": [
+                "back",
+                "bottom"
+              ]
+            },
+            "l_1": {
+              "l_0": [
+                "back"
+              ]
+            },
+            "l_2": {
+              "l_0": [
+                "right",
+                "top"
+              ],
+              "l_4": [
+                "right"
+              ],
+              "l_5": [
+                "right",
+                "back"
+              ],
+              "l_6": [
+                "right"
+              ]
+            },
+            "l_3": {
+              "l_0": [
+                "left",
+                "top"
+              ],
+              "l_4": [
+                "left"
+              ],
+              "l_5": [
+                "left",
+                "back"
+              ],
+              "l_6": [
+                "left"
+              ]
+            },
+            "l_4": {
+              "l_0": [
+                "top"
+              ],
+              "l_2": [
+                "left"
+              ],
+              "l_3": [
+                "right"
+              ],
+              "l_5": [
+                "back"
+              ],
+              "l_6": [
+                "center"
+              ]
+            },
+            "l_5": {
+              "l_0": [
+                "front",
+                "top"
+              ],
+              "l_2": [
+                "left",
+                "front"
+              ],
+              "l_3": [
+                "right",
+                "front"
+              ],
+              "l_4": [
+                "front"
+              ],
+              "l_6": [
+                "front"
+              ]
+            },
+            "l_6": {
+              "l_2": [
+                "left"
+              ],
+              "l_3": [
+                "right"
+              ],
+              "l_4": [
+                "center"
+              ],
+              "l_5": [
+                "back"
+              ]
+            }
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "elongated"
+            },
+            "l_1": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "very_flat"
+            },
+            "l_2": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "very_flat"
+            },
+            "l_3": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "very_flat"
+            },
+            "l_4": {
+              "shape_label": "complex",
+              "major_axis": "x",
+              "aspect_ratio": "flat"
+            },
+            "l_5": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_6": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_1": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_2": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_3": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_4": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_5": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_6": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Base Cabinet",
+          "category": "Furniture",
+          "dimension": [
+            60.0,
+            60.0,
+            90.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "cabinet_frame",
+              "material_index": 3,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the main structural frame of the cabinet, made of wood."
+            },
+            "l_1": {
+              "part_name": "cabinet_door",
+              "material_index": 1,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the door of the cabinet, made of wood."
+            },
+            "l_2": {
+              "part_name": "base_side_panel",
+              "material_index": 6,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A side panel at the base of the cabinet, made of wood."
+            },
+            "l_3": {
+              "part_name": "base_side_panel",
+              "material_index": 6,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "Another side panel at the base of the cabinet, made of wood."
+            },
+            "l_4": {
+              "part_name": "base_side_panel",
+              "material_index": 6,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A front-facing base panel of the cabinet, made of wood."
+            },
+            "l_5": {
+              "part_name": "base_side_panel",
+              "material_index": 6,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "A rear-facing base panel of the cabinet, made of wood."
+            },
+            "l_6": {
+              "part_name": "bottom_panel",
+              "material_index": 4,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the bottom panel of the cabinet, made of wood."
+            }
+          },
+          "part_ids": [
+            "l_0",
+            "l_1",
+            "l_2",
+            "l_3",
+            "l_4",
+            "l_5",
+            "l_6"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0",
+                "l_2",
+                "l_3",
+                "l_4",
+                "l_5",
+                "l_6"
+              ],
+              "type": "E",
+              "param": "N/A"
+            },
+            {
+              "id": "group_1",
+              "parts": [
+                "l_1"
+              ],
+              "type": "C relative to group_0",
+              "param": "direction: [0, 0, 1], axis position (in voxel grid): [8.04, 8.83, 0], revolute range (degree): [-180, 0]"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/46660/32"
+      },
+      "meta": {
+        "split": "train",
+        "category": "Furniture",
+        "part_count": 7,
+        "complexity": "hard",
+        "quality_ok": true
+      }
+    }
+  ],
+  "val": [
+    {
+      "id": "22426_015",
+      "image": "22426_/015.png",
+      "sam_feature": "sam_feature/22426/015.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 2,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 2,
+          "bbox_2d": {
+            "l_0": [
+              0.128,
+              0.915,
+              0.144,
+              0.454
+            ],
+            "l_1": [
+              0.283,
+              0.731,
+              0.188,
+              0.872
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              1,
+              30,
+              1,
+              30,
+              31,
+              31
+            ],
+            "l_1": [
+              5,
+              26,
+              5,
+              26,
+              0,
+              31
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {
+              "l_1": [
+                "bottom"
+              ]
+            },
+            "l_1": {
+              "l_0": [
+                "top"
+              ]
+            }
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "very_flat"
+            },
+            "l_1": {
+              "shape_label": "complex",
+              "major_axis": "z",
+              "aspect_ratio": "balanced"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_1": {
+              "hardness": "rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Table",
+          "category": "Furniture",
+          "dimension": [
+            80.0,
+            80.0,
+            75.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "board",
+              "material_index": 1,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the tabletop board of a table, made of wood."
+            },
+            "l_1": {
+              "part_name": "table_base",
+              "material_index": 4,
+              "material": "Metal",
+              "density": 7.85,
+              "young_modulus": 200.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the base structure of the table, made of metal."
+            }
+          },
+          "part_ids": [
+            "l_0",
+            "l_1"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0",
+                "l_1"
+              ],
+              "type": "E",
+              "param": "N/A"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/22426/32"
+      },
+      "meta": {
+        "split": "val",
+        "category": "Furniture",
+        "part_count": 2,
+        "complexity": "easy",
+        "quality_ok": true
+      }
+    },
+    {
+      "id": "5952_009",
+      "image": "5952_/009.png",
+      "sam_feature": "sam_feature/5952/009.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 1,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 1,
+          "bbox_2d": {
+            "l_0": [
+              0.342,
+              0.658,
+              0.214,
+              0.798
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              7,
+              24,
+              7,
+              24,
+              0,
+              31
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {}
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "complex",
+              "major_axis": "z",
+              "aspect_ratio": "elongated"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Drinking Cup",
+          "category": "Container",
+          "dimension": [
+            8.0,
+            8.0,
+            15.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "Container",
+              "material_index": 1,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "This is the main container body of a drinking cup, made of plastic."
+            }
+          },
+          "part_ids": [
+            "l_0"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0"
+              ],
+              "type": "E",
+              "param": "N/A"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/5952/32"
+      },
+      "meta": {
+        "split": "val",
+        "category": "Container",
+        "part_count": 1,
+        "complexity": "easy",
+        "quality_ok": true
+      }
+    },
+    {
+      "id": "8943_006",
+      "image": "8943_/006.png",
+      "sam_feature": "sam_feature/8943/006.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 2,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 2,
+          "bbox_2d": {
+            "l_0": [
+              0.393,
+              0.598,
+              0.238,
+              0.76
+            ],
+            "l_1": [
+              0.405,
+              0.579,
+              0.259,
+              0.755
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              8,
+              22,
+              15,
+              16,
+              0,
+              31
+            ],
+            "l_1": [
+              9,
+              22,
+              15,
+              16,
+              0,
+              31
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {
+              "l_1": [
+                "center"
+              ]
+            },
+            "l_1": {
+              "l_0": [
+                "center"
+              ]
+            }
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "very_flat"
+            },
+            "l_1": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "very_flat"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_1": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Hinged Door",
+          "category": "Architectural Component",
+          "dimension": [
+            90.0,
+            10.0,
+            210.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "Outside Frame",
+              "material_index": 5,
+              "material": "Wood",
+              "density": 0.6,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the outside frame of a hinged door, typically made of wood."
+            },
+            "l_1": {
+              "part_name": "Door Body",
+              "material_index": 1,
+              "material": "Wood",
+              "density": 0.6,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the main door panel that opens and closes, made of wood."
+            }
+          },
+          "part_ids": [
+            "l_0",
+            "l_1"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0"
+              ],
+              "type": "E",
+              "param": "N/A"
+            },
+            {
+              "id": "group_1",
+              "parts": [
+                "l_1"
+              ],
+              "type": "C relative to group_0",
+              "param": "direction: [0, 0, 1], axis position (in voxel grid): [9.75, 15.38, 0], revolute range (degree): [-180, 0]"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/8943/32"
+      },
+      "meta": {
+        "split": "val",
+        "category": "Architectural Component",
+        "part_count": 2,
+        "complexity": "easy",
+        "quality_ok": true
+      }
+    },
+    {
+      "id": "26302_000",
+      "image": "26302_/000.png",
+      "sam_feature": "sam_feature/26302/000.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 4,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 4,
+          "bbox_2d": {
+            "l_0": [
+              0.216,
+              0.76,
+              0.152,
+              0.679
+            ],
+            "l_1": [
+              0.336,
+              0.883,
+              0.521,
+              0.907
+            ],
+            "l_2": [
+              0.062,
+              0.72,
+              0.149,
+              0.459
+            ],
+            "l_3": [
+              0.386,
+              0.601,
+              0.28,
+              0.668
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              0,
+              31,
+              0,
+              31,
+              26,
+              29
+            ],
+            "l_1": [
+              0,
+              3,
+              0,
+              31,
+              3,
+              29
+            ],
+            "l_2": [
+              28,
+              31,
+              0,
+              31,
+              3,
+              29
+            ],
+            "l_3": [
+              2,
+              29,
+              13,
+              18,
+              17,
+              27
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {
+              "l_1": [
+                "left",
+                "bottom"
+              ],
+              "l_2": [
+                "right",
+                "bottom"
+              ],
+              "l_3": [
+                "bottom"
+              ]
+            },
+            "l_1": {
+              "l_0": [
+                "right",
+                "top"
+              ],
+              "l_3": [
+                "right",
+                "top"
+              ]
+            },
+            "l_2": {
+              "l_0": [
+                "left",
+                "top"
+              ],
+              "l_3": [
+                "left",
+                "top"
+              ]
+            },
+            "l_3": {
+              "l_0": [
+                "top"
+              ],
+              "l_1": [
+                "left",
+                "bottom"
+              ],
+              "l_2": [
+                "right",
+                "bottom"
+              ]
+            }
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "very_flat"
+            },
+            "l_1": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "very_flat"
+            },
+            "l_2": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "very_flat"
+            },
+            "l_3": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "flat"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_1": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_2": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_3": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Small Table Frame",
+          "category": "Furniture",
+          "dimension": [
+            50.0,
+            40.0,
+            45.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "board",
+              "material_index": 1,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the top board of the table, made of wood."
+            },
+            "l_1": {
+              "part_name": "vertical_side_panel",
+              "material_index": 4,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is a vertical side panel of the table, made of wood."
+            },
+            "l_2": {
+              "part_name": "vertical_side_panel",
+              "material_index": 5,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the other vertical side panel of the table, made of wood."
+            },
+            "l_3": {
+              "part_name": "vertical_divider_panel",
+              "material_index": 3,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is a vertical divider panel inside the table frame, made of wood."
+            }
+          },
+          "part_ids": [
+            "l_0",
+            "l_1",
+            "l_2",
+            "l_3"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0",
+                "l_1",
+                "l_2",
+                "l_3"
+              ],
+              "type": "E",
+              "param": "N/A"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/26302/32"
+      },
+      "meta": {
+        "split": "val",
+        "category": "Furniture",
+        "part_count": 4,
+        "complexity": "medium",
+        "quality_ok": true
+      }
+    },
+    {
+      "id": "4081_007",
+      "image": "4081_/007.png",
+      "sam_feature": "sam_feature/4081/007.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 3,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 3,
+          "bbox_2d": {
+            "l_0": [
+              0.371,
+              0.629,
+              0.333,
+              0.8
+            ],
+            "l_1": [
+              0.481,
+              0.52,
+              0.22,
+              0.351
+            ],
+            "l_2": [
+              0.373,
+              0.627,
+              0.341,
+              0.36
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              8,
+              23,
+              8,
+              23,
+              0,
+              23
+            ],
+            "l_1": [
+              9,
+              16,
+              14,
+              17,
+              22,
+              29
+            ],
+            "l_2": [
+              8,
+              22,
+              8,
+              23,
+              21,
+              22
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {
+              "l_2": [
+                "top"
+              ]
+            },
+            "l_1": {
+              "l_2": [
+                "center"
+              ]
+            },
+            "l_2": {
+              "l_0": [
+                "bottom"
+              ],
+              "l_1": [
+                "center"
+              ]
+            }
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "complex",
+              "major_axis": "z",
+              "aspect_ratio": "balanced"
+            },
+            "l_1": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "elongated"
+            },
+            "l_2": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "very_flat"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_1": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_2": {
+              "hardness": "soft",
+              "roughness": "smooth",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Soda Can with Straw",
+          "category": "Drinkware",
+          "dimension": [
+            7.0,
+            7.0,
+            15.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "body",
+              "material_index": 1,
+              "material": "Aluminum",
+              "density": 2.7,
+              "young_modulus": 70.0,
+              "poisson_ratio": 0.33,
+              "description": "This is the cylindrical body of the soda can, made of aluminum."
+            },
+            "l_1": {
+              "part_name": "mouth",
+              "material_index": 3,
+              "material": "Plastic",
+              "density": 0.95,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "This is the straw or mouthpiece of the soda can, made of plastic."
+            },
+            "l_2": {
+              "part_name": "liquid",
+              "material_index": 10,
+              "material": "Carbonated Beverage",
+              "density": 1.0,
+              "young_modulus": 0.001,
+              "poisson_ratio": 0.5,
+              "description": "This is the liquid content inside the can, typically a soda or other beverage."
+            }
+          },
+          "part_ids": [
+            "l_0",
+            "l_1",
+            "l_2"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0",
+                "l_1",
+                "l_2"
+              ],
+              "type": "E",
+              "param": "N/A"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/4081/32"
+      },
+      "meta": {
+        "split": "val",
+        "category": "Drinkware",
+        "part_count": 3,
+        "complexity": "medium",
+        "quality_ok": true
+      }
+    },
+    {
+      "id": "11842_012",
+      "image": "11842_/012.png",
+      "sam_feature": "sam_feature/11842/012.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 5,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 5,
+          "bbox_2d": {
+            "l_0": [
+              0.308,
+              0.69,
+              0.233,
+              0.695
+            ],
+            "l_1": [
+              0.579,
+              0.719,
+              0.562,
+              0.796
+            ],
+            "l_2": [
+              0.589,
+              0.653,
+              0.602,
+              0.74
+            ],
+            "l_3": [
+              0.304,
+              0.446,
+              0.506,
+              0.72
+            ],
+            "l_4": [
+              0.366,
+              0.436,
+              0.556,
+              0.684
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              3,
+              28,
+              15,
+              19,
+              3,
+              29
+            ],
+            "l_1": [
+              3,
+              8,
+              10,
+              21,
+              0,
+              10
+            ],
+            "l_2": [
+              7,
+              8,
+              12,
+              19,
+              0,
+              8
+            ],
+            "l_3": [
+              22,
+              27,
+              10,
+              21,
+              0,
+              10
+            ],
+            "l_4": [
+              22,
+              23,
+              12,
+              19,
+              0,
+              8
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {
+              "l_1": [
+                "left",
+                "bottom"
+              ],
+              "l_2": [
+                "left",
+                "bottom"
+              ],
+              "l_3": [
+                "right",
+                "bottom"
+              ]
+            },
+            "l_1": {
+              "l_0": [
+                "right",
+                "top"
+              ],
+              "l_2": [
+                "center"
+              ]
+            },
+            "l_2": {
+              "l_0": [
+                "right",
+                "top"
+              ],
+              "l_1": [
+                "center"
+              ]
+            },
+            "l_3": {
+              "l_0": [
+                "left",
+                "top"
+              ],
+              "l_4": [
+                "center"
+              ]
+            },
+            "l_4": {
+              "l_3": [
+                "center"
+              ]
+            }
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "complex",
+              "major_axis": "x",
+              "aspect_ratio": "flat"
+            },
+            "l_1": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "elongated"
+            },
+            "l_2": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "very_flat"
+            },
+            "l_3": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "elongated"
+            },
+            "l_4": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "very_flat"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_1": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_2": {
+              "hardness": "soft",
+              "roughness": "rough",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_3": {
+              "hardness": "semi_rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_4": {
+              "hardness": "soft",
+              "roughness": "rough",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Headphones",
+          "category": "AudioDevice",
+          "dimension": [
+            18.0,
+            15.0,
+            5.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "Top Band",
+              "material_index": 1,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "This is the top band of the headphones, made of plastic."
+            },
+            "l_1": {
+              "part_name": "Left Earcup Frame",
+              "material_index": 4,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "This is the left earcup frame, made of plastic."
+            },
+            "l_2": {
+              "part_name": "Left Earcup Pad",
+              "material_index": 2,
+              "material": "Foam",
+              "density": 0.03,
+              "young_modulus": 0.05,
+              "poisson_ratio": 0.35,
+              "description": "This is the left earcup pad, made of foam."
+            },
+            "l_3": {
+              "part_name": "Right Earcup Frame",
+              "material_index": 4,
+              "material": "Plastic",
+              "density": 1.2,
+              "young_modulus": 2.5,
+              "poisson_ratio": 0.38,
+              "description": "This is the right earcup frame, made of plastic."
+            },
+            "l_4": {
+              "part_name": "Right Earcup Pad",
+              "material_index": 3,
+              "material": "Foam",
+              "density": 0.03,
+              "young_modulus": 0.05,
+              "poisson_ratio": 0.35,
+              "description": "This is the right earcup pad, made of foam."
+            }
+          },
+          "part_ids": [
+            "l_0",
+            "l_1",
+            "l_2",
+            "l_3",
+            "l_4"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0"
+              ],
+              "type": "E",
+              "param": "N/A"
+            },
+            {
+              "id": "group_1",
+              "parts": [
+                "l_1",
+                "l_2"
+              ],
+              "type": "C relative to group_0",
+              "param": "direction: [0, 1, 0], axis position (in voxel grid): [4.18, 0, 10.06], revolute range (degree): [-18, 18]"
+            },
+            {
+              "id": "group_2",
+              "parts": [
+                "l_3",
+                "l_4"
+              ],
+              "type": "C relative to group_0",
+              "param": "direction: [0, 1, 0], axis position (in voxel grid): [27.4, 0, 6.94], revolute range (degree): [-18, 18]"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/11842/32"
+      },
+      "meta": {
+        "split": "val",
+        "category": "AudioDevice",
+        "part_count": 5,
+        "complexity": "medium",
+        "quality_ok": true
+      }
+    },
+    {
+      "id": "44936_023",
+      "image": "44936_/023.png",
+      "sam_feature": "sam_feature/44936/023.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 10,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 10,
+          "bbox_2d": {
+            "l_0": [
+              0.301,
+              0.814,
+              0.554,
+              0.856
+            ],
+            "l_1": [
+              0.206,
+              0.354,
+              0.309,
+              0.827
+            ],
+            "l_2": [
+              0.616,
+              0.836,
+              0.238,
+              0.728
+            ],
+            "l_3": [
+              0.278,
+              0.742,
+              0.242,
+              0.704
+            ],
+            "l_4": [
+              0.715,
+              0.755,
+              0.626,
+              0.682
+            ],
+            "l_5": [
+              0.64,
+              0.674,
+              0.264,
+              0.328
+            ],
+            "l_6": [
+              0.311,
+              0.359,
+              0.716,
+              0.76
+            ],
+            "l_7": [
+              0.248,
+              0.294,
+              0.348,
+              0.394
+            ],
+            "l_8": [
+              0.284,
+              0.358,
+              0.387,
+              0.755
+            ],
+            "l_9": [
+              0.64,
+              0.73,
+              0.316,
+              0.68
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              2,
+              28,
+              22,
+              31,
+              11,
+              31
+            ],
+            "l_1": [
+              26,
+              31,
+              1,
+              31,
+              11,
+              23
+            ],
+            "l_2": [
+              0,
+              5,
+              1,
+              31,
+              11,
+              23
+            ],
+            "l_3": [
+              1,
+              27,
+              0,
+              28,
+              11,
+              16
+            ],
+            "l_4": [
+              0,
+              1,
+              27,
+              31,
+              1,
+              12
+            ],
+            "l_5": [
+              0,
+              1,
+              2,
+              3,
+              1,
+              12
+            ],
+            "l_6": [
+              30,
+              30,
+              27,
+              31,
+              0,
+              12
+            ],
+            "l_7": [
+              30,
+              30,
+              2,
+              3,
+              1,
+              12
+            ],
+            "l_8": [
+              30,
+              30,
+              2,
+              31,
+              0,
+              2
+            ],
+            "l_9": [
+              0,
+              1,
+              2,
+              31,
+              1,
+              2
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {
+              "l_1": [
+                "right",
+                "front"
+              ],
+              "l_2": [
+                "left",
+                "front"
+              ],
+              "l_3": [
+                "front",
+                "bottom"
+              ],
+              "l_4": [
+                "left",
+                "bottom"
+              ]
+            },
+            "l_1": {
+              "l_0": [
+                "left",
+                "back"
+              ],
+              "l_3": [
+                "left"
+              ],
+              "l_6": [
+                "back",
+                "bottom"
+              ],
+              "l_7": [
+                "front",
+                "bottom"
+              ]
+            },
+            "l_2": {
+              "l_0": [
+                "right",
+                "back"
+              ],
+              "l_3": [
+                "right"
+              ],
+              "l_4": [
+                "back",
+                "bottom"
+              ],
+              "l_5": [
+                "front",
+                "bottom"
+              ]
+            },
+            "l_3": {
+              "l_0": [
+                "back",
+                "top"
+              ],
+              "l_1": [
+                "right"
+              ],
+              "l_2": [
+                "left"
+              ],
+              "l_4": [
+                "left",
+                "back",
+                "bottom"
+              ]
+            },
+            "l_4": {
+              "l_0": [
+                "right",
+                "top"
+              ],
+              "l_2": [
+                "front",
+                "top"
+              ],
+              "l_3": [
+                "right",
+                "front",
+                "top"
+              ],
+              "l_9": [
+                "front",
+                "bottom"
+              ]
+            },
+            "l_5": {
+              "l_2": [
+                "back",
+                "top"
+              ],
+              "l_9": [
+                "back",
+                "bottom"
+              ]
+            },
+            "l_6": {
+              "l_1": [
+                "front",
+                "top"
+              ],
+              "l_8": [
+                "front",
+                "bottom"
+              ]
+            },
+            "l_7": {
+              "l_1": [
+                "back",
+                "top"
+              ],
+              "l_8": [
+                "back",
+                "bottom"
+              ]
+            },
+            "l_8": {
+              "l_6": [
+                "back",
+                "top"
+              ],
+              "l_7": [
+                "front",
+                "top"
+              ]
+            },
+            "l_9": {
+              "l_4": [
+                "back",
+                "top"
+              ],
+              "l_5": [
+                "front",
+                "top"
+              ]
+            }
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "complex",
+              "major_axis": "x",
+              "aspect_ratio": "flat"
+            },
+            "l_1": {
+              "shape_label": "complex",
+              "major_axis": "y",
+              "aspect_ratio": "flat"
+            },
+            "l_2": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "flat"
+            },
+            "l_3": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "flat"
+            },
+            "l_4": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "very_flat"
+            },
+            "l_5": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "very_flat"
+            },
+            "l_6": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "very_flat"
+            },
+            "l_7": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "very_flat"
+            },
+            "l_8": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "very_flat"
+            },
+            "l_9": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "very_flat"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "soft",
+              "roughness": "rough",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_1": {
+              "hardness": "soft",
+              "roughness": "rough",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_2": {
+              "hardness": "soft",
+              "roughness": "rough",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_3": {
+              "hardness": "soft",
+              "roughness": "rough",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_4": {
+              "hardness": "rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_5": {
+              "hardness": "rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_6": {
+              "hardness": "rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_7": {
+              "hardness": "rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_8": {
+              "hardness": "rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_9": {
+              "hardness": "rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Armchair",
+          "category": "Furniture",
+          "dimension": [
+            90.0,
+            80.0,
+            85.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "Backrest",
+              "material_index": 2,
+              "material": "Foam and Fabric",
+              "density": 0.03,
+              "young_modulus": 0.05,
+              "poisson_ratio": 0.35,
+              "description": "It's the backrest of an armchair made of foam and fabric."
+            },
+            "l_1": {
+              "part_name": "Left Armrest",
+              "material_index": 4,
+              "material": "Foam and Fabric",
+              "density": 0.03,
+              "young_modulus": 0.05,
+              "poisson_ratio": 0.35,
+              "description": "Left armrest of the armchair made of foam and fabric."
+            },
+            "l_2": {
+              "part_name": "Right Armrest",
+              "material_index": 4,
+              "material": "Foam and Fabric",
+              "density": 0.03,
+              "young_modulus": 0.05,
+              "poisson_ratio": 0.35,
+              "description": "Right armrest of the armchair made of foam and fabric."
+            },
+            "l_3": {
+              "part_name": "Seat Cushion",
+              "material_index": 1,
+              "material": "Foam and Fabric",
+              "density": 0.03,
+              "young_modulus": 0.05,
+              "poisson_ratio": 0.35,
+              "description": "Seat cushion of the armchair made of foam and fabric."
+            },
+            "l_4": {
+              "part_name": "Front Left Leg",
+              "material_index": 10,
+              "material": "Metal",
+              "density": 7.8,
+              "young_modulus": 200.0,
+              "poisson_ratio": 0.3,
+              "description": "Front left leg of the armchair made of metal."
+            },
+            "l_5": {
+              "part_name": "Front Right Leg",
+              "material_index": 10,
+              "material": "Metal",
+              "density": 7.8,
+              "young_modulus": 200.0,
+              "poisson_ratio": 0.3,
+              "description": "Front right leg of the armchair made of metal."
+            },
+            "l_6": {
+              "part_name": "Rear Right Leg",
+              "material_index": 10,
+              "material": "Metal",
+              "density": 7.8,
+              "young_modulus": 200.0,
+              "poisson_ratio": 0.3,
+              "description": "Rear right leg of the armchair made of metal."
+            },
+            "l_7": {
+              "part_name": "Rear Left Leg",
+              "material_index": 10,
+              "material": "Metal",
+              "density": 7.8,
+              "young_modulus": 200.0,
+              "poisson_ratio": 0.3,
+              "description": "Rear left leg of the armchair made of metal."
+            },
+            "l_8": {
+              "part_name": "Left Runner",
+              "material_index": 10,
+              "material": "Metal",
+              "density": 7.8,
+              "young_modulus": 200.0,
+              "poisson_ratio": 0.3,
+              "description": "Left runner bar connecting left legs of the chair."
+            },
+            "l_9": {
+              "part_name": "Right Runner",
+              "material_index": 10,
+              "material": "Metal",
+              "density": 7.8,
+              "young_modulus": 200.0,
+              "poisson_ratio": 0.3,
+              "description": "Right runner bar connecting right legs of the chair."
+            }
+          },
+          "part_ids": [
+            "l_0",
+            "l_1",
+            "l_2",
+            "l_3",
+            "l_4",
+            "l_5",
+            "l_6",
+            "l_7",
+            "l_8",
+            "l_9"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0",
+                "l_1",
+                "l_2",
+                "l_3",
+                "l_4",
+                "l_5",
+                "l_6",
+                "l_7",
+                "l_8",
+                "l_9"
+              ],
+              "type": "E",
+              "param": "N/A"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/44936/32"
+      },
+      "meta": {
+        "split": "val",
+        "category": "Furniture",
+        "part_count": 10,
+        "complexity": "hard",
+        "quality_ok": true
+      }
+    },
+    {
+      "id": "19457_012",
+      "image": "19457_/012.png",
+      "sam_feature": "sam_feature/19457/012.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 6,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 6,
+          "bbox_2d": {
+            "l_0": [
+              0.231,
+              0.795,
+              0.36,
+              0.488
+            ],
+            "l_1": [
+              0.231,
+              0.795,
+              0.359,
+              0.51
+            ],
+            "l_2": [
+              0.75,
+              0.794,
+              0.428,
+              0.612
+            ],
+            "l_3": [
+              0.676,
+              0.723,
+              0.485,
+              0.699
+            ],
+            "l_4": [
+              0.233,
+              0.274,
+              0.399,
+              0.569
+            ],
+            "l_5": [
+              0.35,
+              0.38,
+              0.363,
+              0.514
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              0,
+              31,
+              9,
+              22,
+              23,
+              24
+            ],
+            "l_1": [
+              0,
+              31,
+              9,
+              22,
+              22,
+              24
+            ],
+            "l_2": [
+              0,
+              1,
+              9,
+              11,
+              12,
+              24
+            ],
+            "l_3": [
+              0,
+              1,
+              20,
+              22,
+              12,
+              24
+            ],
+            "l_4": [
+              30,
+              31,
+              20,
+              22,
+              12,
+              24
+            ],
+            "l_5": [
+              30,
+              31,
+              9,
+              11,
+              12,
+              24
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {
+              "l_1": [
+                "center"
+              ],
+              "l_2": [
+                "left",
+                "front",
+                "bottom"
+              ],
+              "l_3": [
+                "left",
+                "back",
+                "bottom"
+              ],
+              "l_4": [
+                "right",
+                "back",
+                "bottom"
+              ],
+              "l_5": [
+                "right",
+                "front",
+                "bottom"
+              ]
+            },
+            "l_1": {
+              "l_0": [
+                "center"
+              ],
+              "l_2": [
+                "left",
+                "front",
+                "bottom"
+              ],
+              "l_3": [
+                "left",
+                "back",
+                "bottom"
+              ],
+              "l_4": [
+                "right",
+                "back",
+                "bottom"
+              ],
+              "l_5": [
+                "right",
+                "front",
+                "bottom"
+              ]
+            },
+            "l_2": {
+              "l_0": [
+                "right",
+                "back",
+                "top"
+              ],
+              "l_1": [
+                "right",
+                "back",
+                "top"
+              ]
+            },
+            "l_3": {
+              "l_0": [
+                "right",
+                "front",
+                "top"
+              ],
+              "l_1": [
+                "right",
+                "front",
+                "top"
+              ]
+            },
+            "l_4": {
+              "l_0": [
+                "left",
+                "front",
+                "top"
+              ],
+              "l_1": [
+                "left",
+                "front",
+                "top"
+              ]
+            },
+            "l_5": {
+              "l_0": [
+                "left",
+                "back",
+                "top"
+              ],
+              "l_1": [
+                "left",
+                "back",
+                "top"
+              ]
+            }
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_1": {
+              "shape_label": "complex",
+              "major_axis": "x",
+              "aspect_ratio": "very_flat"
+            },
+            "l_2": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "very_flat"
+            },
+            "l_3": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "very_flat"
+            },
+            "l_4": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "very_flat"
+            },
+            "l_5": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "very_flat"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_1": {
+              "hardness": "rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_2": {
+              "hardness": "rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_3": {
+              "hardness": "rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_4": {
+              "hardness": "rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            },
+            "l_5": {
+              "hardness": "rigid",
+              "roughness": "smooth",
+              "reflectivity": "glossy",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Table",
+          "category": "Furniture",
+          "dimension": [
+            150.0,
+            70.0,
+            75.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "tabletop_surface",
+              "material_index": 1,
+              "material": "Wood",
+              "density": 0.75,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the tabletop surface of a table, made of wood."
+            },
+            "l_1": {
+              "part_name": "tabletop_frame",
+              "material_index": 4,
+              "material": "Metal",
+              "density": 7.85,
+              "young_modulus": 200.0,
+              "poisson_ratio": 0.3,
+              "description": "This is the supporting frame under the tabletop surface, made of metal."
+            },
+            "l_2": {
+              "part_name": "leg",
+              "material_index": 5,
+              "material": "Metal",
+              "density": 7.85,
+              "young_modulus": 200.0,
+              "poisson_ratio": 0.3,
+              "description": "This is one of the four legs of the table, made of metal."
+            },
+            "l_3": {
+              "part_name": "leg",
+              "material_index": 5,
+              "material": "Metal",
+              "density": 7.85,
+              "young_modulus": 200.0,
+              "poisson_ratio": 0.3,
+              "description": "This is one of the four legs of the table, made of metal."
+            },
+            "l_4": {
+              "part_name": "leg",
+              "material_index": 5,
+              "material": "Metal",
+              "density": 7.85,
+              "young_modulus": 200.0,
+              "poisson_ratio": 0.3,
+              "description": "This is one of the four legs of the table, made of metal."
+            },
+            "l_5": {
+              "part_name": "leg",
+              "material_index": 5,
+              "material": "Metal",
+              "density": 7.85,
+              "young_modulus": 200.0,
+              "poisson_ratio": 0.3,
+              "description": "This is one of the four legs of the table, made of metal."
+            }
+          },
+          "part_ids": [
+            "l_0",
+            "l_1",
+            "l_2",
+            "l_3",
+            "l_4",
+            "l_5"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0",
+                "l_1",
+                "l_2",
+                "l_3",
+                "l_4",
+                "l_5"
+              ],
+              "type": "E",
+              "param": "N/A"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/19457/32"
+      },
+      "meta": {
+        "split": "val",
+        "category": "Furniture",
+        "part_count": 6,
+        "complexity": "hard",
+        "quality_ok": true
+      }
+    },
+    {
+      "id": "41816_005",
+      "image": "41816_/005.png",
+      "sam_feature": "sam_feature/41816/005.npz",
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text",
+              "text": "Analyze the 3D physical object in the image and output its complete physical asset description.\n\nFirst, reason step by step inside <think>:\nStep 1: Count the total number of independent structural parts (`part_count`).\nStep 2: For each part, record its 2D image bounding range `bbox_2d` = [x_min, x_max, y_min, y_max] (normalized 0~1), its 3D voxel bounding range `bbox_3d` = [x_min, x_max, y_min, y_max, z_min, z_max] in the canonical 32 32 32 voxel space (both use the same min/max vertex format), and the SAM visual feature token `sam_feat` = <sam_feat_l_{part_id}> which encodes the region appearance from the SAM3 encoder.\nStep 3: For each part, describe the relative 3D position of its directly adjacent parts using discrete direction labels (top/bottom/left/right/front/back/center). Non-adjacent parts are not recorded.\nStep 4: Identify each part's dominant geometric primitive (`shape_label`: cuboid/cylinder/sphere/complex), its major axis orientation (`major_axis`: x/y/z), and its aspect ratio (`aspect_ratio`: very_flat/flat/balanced/tall/elongated).\nStep 5: Assess each part's surface perceptual properties: `hardness` (soft/semi_rigid/rigid), `roughness` (smooth/textured/rough), `reflectivity` (matte/glossy/highly_reflective), and `transparency` (opaque/translucent/transparent).\n\nThen output the structured physical description inside <overall>."
+            }
+          ]
+        }
+      ],
+      "gt": {
+        "part_count": 6,
+        "think_steps": {
+          "steps_found": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "part_count": 6,
+          "bbox_2d": {
+            "l_0": [
+              0.422,
+              0.723,
+              0.17,
+              0.475
+            ],
+            "l_1": [
+              0.3,
+              0.724,
+              0.445,
+              0.523
+            ],
+            "l_2": [
+              0.672,
+              0.725,
+              0.506,
+              0.776
+            ],
+            "l_3": [
+              0.512,
+              0.546,
+              0.509,
+              0.725
+            ],
+            "l_4": [
+              0.426,
+              0.492,
+              0.501,
+              0.823
+            ],
+            "l_5": [
+              0.298,
+              0.346,
+              0.506,
+              0.752
+            ]
+          },
+          "bbox_3d": {
+            "l_0": [
+              6,
+              25,
+              23,
+              27,
+              17,
+              31
+            ],
+            "l_1": [
+              6,
+              25,
+              6,
+              27,
+              15,
+              19
+            ],
+            "l_2": [
+              6,
+              8,
+              24,
+              27,
+              0,
+              16
+            ],
+            "l_3": [
+              6,
+              8,
+              6,
+              9,
+              0,
+              16
+            ],
+            "l_4": [
+              22,
+              25,
+              24,
+              27,
+              0,
+              16
+            ],
+            "l_5": [
+              22,
+              25,
+              6,
+              9,
+              0,
+              16
+            ]
+          },
+          "inter_part_positions": {
+            "l_0": {
+              "l_1": [
+                "front",
+                "bottom"
+              ],
+              "l_2": [
+                "left",
+                "bottom"
+              ],
+              "l_4": [
+                "right",
+                "bottom"
+              ]
+            },
+            "l_1": {
+              "l_0": [
+                "back",
+                "top"
+              ],
+              "l_2": [
+                "left",
+                "back",
+                "bottom"
+              ],
+              "l_3": [
+                "left",
+                "front",
+                "bottom"
+              ],
+              "l_4": [
+                "right",
+                "back",
+                "bottom"
+              ],
+              "l_5": [
+                "right",
+                "front",
+                "bottom"
+              ]
+            },
+            "l_2": {
+              "l_0": [
+                "right",
+                "top"
+              ],
+              "l_1": [
+                "right",
+                "front",
+                "top"
+              ]
+            },
+            "l_3": {
+              "l_1": [
+                "right",
+                "back",
+                "top"
+              ]
+            },
+            "l_4": {
+              "l_0": [
+                "left",
+                "top"
+              ],
+              "l_1": [
+                "left",
+                "front",
+                "top"
+              ]
+            },
+            "l_5": {
+              "l_1": [
+                "left",
+                "back",
+                "top"
+              ]
+            }
+          },
+          "primitive_shape": {
+            "l_0": {
+              "shape_label": "cuboid",
+              "major_axis": "x",
+              "aspect_ratio": "flat"
+            },
+            "l_1": {
+              "shape_label": "cuboid",
+              "major_axis": "y",
+              "aspect_ratio": "flat"
+            },
+            "l_2": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "very_flat"
+            },
+            "l_3": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "very_flat"
+            },
+            "l_4": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "flat"
+            },
+            "l_5": {
+              "shape_label": "cuboid",
+              "major_axis": "z",
+              "aspect_ratio": "flat"
+            }
+          },
+          "surface_features": {
+            "l_0": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_1": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_2": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_3": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_4": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            },
+            "l_5": {
+              "hardness": "rigid",
+              "roughness": "textured",
+              "reflectivity": "matte",
+              "transparency": "opaque"
+            }
+          }
+        },
+        "overall_dict": {
+          "name": "Chair",
+          "category": "Furniture",
+          "dimension": [
+            45.0,
+            45.0,
+            90.0
+          ],
+          "parts": {
+            "l_0": {
+              "part_name": "Backrest",
+              "material_index": 2,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "It's the backrest of a chair made of wood."
+            },
+            "l_1": {
+              "part_name": "Seat",
+              "material_index": 1,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "It's the seat surface of a chair made of wood."
+            },
+            "l_2": {
+              "part_name": "Rear Left Leg",
+              "material_index": 9,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "It's the rear left leg of a chair made of wood."
+            },
+            "l_3": {
+              "part_name": "Front Left Leg",
+              "material_index": 8,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "It's the front left leg of a chair made of wood."
+            },
+            "l_4": {
+              "part_name": "Rear Right Leg",
+              "material_index": 7,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "It's the rear right leg of a chair made of wood."
+            },
+            "l_5": {
+              "part_name": "Front Right Leg",
+              "material_index": 5,
+              "material": "Wood",
+              "density": 0.65,
+              "young_modulus": 10.0,
+              "poisson_ratio": 0.3,
+              "description": "It's the front right leg of a chair made of wood."
+            }
+          },
+          "part_ids": [
+            "l_0",
+            "l_1",
+            "l_2",
+            "l_3",
+            "l_4",
+            "l_5"
+          ],
+          "group_info": [
+            {
+              "id": "group_0",
+              "parts": [
+                "l_0",
+                "l_1",
+                "l_2",
+                "l_3",
+                "l_4",
+                "l_5"
+              ],
+              "type": "E",
+              "param": "N/A"
+            }
+          ]
+        },
+        "voxel_dir": "tmp/partseg/41816/32"
+      },
+      "meta": {
+        "split": "val",
+        "category": "Furniture",
+        "part_count": 6,
+        "complexity": "hard",
+        "quality_ok": true
+      }
+    }
+  ]
+}
