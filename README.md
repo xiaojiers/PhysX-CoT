@@ -8,10 +8,10 @@ inference pipeline, frozen-decoder interface, part splitting, SimReady asset
 generation, evaluation, SFT, and CoT-aligned GRPO code.
 
 The manuscript is currently under anonymous review. The public paper link,
-checkpoint URLs, dataset manifest, citation, and license will be added only
-after release clearance.
+checkpoint URLs, dataset manifest, and citation will be added after release
+clearance.
 
-Run `python tools/verify_release.py` before creating a public repository. It
+Run `python tools/verify_release.py` before publishing a release. It
 checks Python syntax, non-ASCII text and filenames, and accidental private
 paths.
 
@@ -119,10 +119,36 @@ post-SFT policy optimization described in the appendix, use
 `qwen-vl-GRPO-finetune/scripts/run_grpo.sh`. Both scripts read paths from the
 `PHYSX_COT_*` environment variables documented in the scripts.
 
+## Acknowledgements
+
+PhysX-CoT builds on the pipeline and code released by
+[PhysX-Anything](https://github.com/ziangcao0312/PhysX-Anything). We thank the
+PhysX-Anything authors for making their work available and for establishing a
+foundation for image-conditioned physical reasoning and simulation-ready 3D
+asset generation. PhysX-CoT extends this foundation with structured physical
+chain-of-thought reasoning, updated vision-language model integration,
+state-level SFT, CoT-aligned GRPO, and expanded evaluation and orchestration.
+
+We also acknowledge the external research and engineering foundations provided
+by Qwen3-VL, SAM3, TRELLIS, and NVIDIA PhysX-related simulation tooling. See
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for source attribution and
+reuse details. These
+acknowledgements do not imply endorsement by the respective authors or
+organizations.
+
+## License
+
+PhysX-CoT is released under the **S-Lab License 1.0** for non-commercial use.
+See [LICENSE](LICENSE) for the complete terms. The repository contains code
+derived from PhysX-Anything, Copyright 2023 S-Lab; attribution and the audited
+upstream revision are documented in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Commercial use or
+redistribution requires contacting the contributor(s) of the relevant work.
+
 ## Release checklist
 
-- [ ] Add the final arXiv identifier and repository URL.
-- [ ] Add a license chosen by the authors.
+- [ ] Add the final arXiv identifier and paper citation.
+- [x] Add the S-Lab License 1.0 and third-party notices.
 - [ ] Publish checkpoint and dataset provenance.
 - [ ] Run a clean end-to-end sample on the target CUDA image.
 - [ ] Confirm that the public package does not include private paths or
